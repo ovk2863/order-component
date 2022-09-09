@@ -1,3 +1,127 @@
-body {
-  background-color: red;
+:root {
+  --pale-blue: 225, 100%, 94%;
+  --bright-blue: 245, 75%, 52%;
+  --very-pale-blue: 225, 100%, 98%;
+  --desaturated-blue: 224, 23%, 55%;
+  --dark-blue: 223, 47%, 23%;
+  --white: 0, 0%, 100%;
+
+}
+
+.page {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Red Hat Display', 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: hsl(var(--dark-blue));
+  background-color: hsl(var(--very-pale-blue));
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.card {
+  width: 325px;
+  background-color: hsl(var(--white));
+  border-radius: 20px;
+}
+
+.card__img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 35px 24px;
+  text-align: center;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 19px;
+}
+
+.card__description {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0 10px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.card__options {
+  display: grid;
+  grid-template-columns: 50px auto auto;
+  background-color: hsl(var(--very-pale-blue));
+  background-image: url(images/icon-music.svg);
+  background-repeat: no-repeat;
+  background-position: 15px;
+  padding: 22px 15px;
+  margin-bottom: 23px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.options__title {
+  font-size: 13.5px;
+  font-weight: 700;
+  padding-bottom: 7px;
+  margin: 0;
+  grid-column: 2/3;
+}
+
+.options__price {
+  grid-column: 2/3;
+}
+
+.options__link {
+  grid-column: 3/4;
+  grid-row: 1/3;
+  align-self: center;
+  justify-self: end;
+}
+
+.card__btn--payment {
+  background-color: hsl(var(--bright-blue));
+  border-radius: 10px;
+  border: none;
+  color: hsl(var(--white));
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 8px;
+  margin-bottom: 25px;
+}
+
+.card__btn--cancel {
+  border: none;
+  background-color: transparent;
+  color: hsl(var(--desaturated-blue));
+  font-size: 16px;
+  font-weight: 700;
 }

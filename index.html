@@ -7,28 +7,31 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 
   <title>Frontend Mentor | Order summary card</title>
 
 </head>
-<body>
-
-  Order Summary
-
-  You can now listen to millions of songs, audiobooks, and podcasts on any
-  device anywhere you like!
-
-  Annual Plan
-  $59.99/year
-
-  Change
-
-  Proceed to Payment
-  Cancel Order
-
+<body class="page">
+  <main class="page__main">
+    <h1 class="sr-only">Music store order summary</h1>
+    <article class="card">
+      <img class="card__img" src="images/illustration-hero.svg" alt="person listening music and dancing" width="450" height="220">
+      <h2 class="card__title">Order Summary</h2>
+      <p class="card__description">
+         You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!
+      </p>
+      <div class="card__options options">
+        <h3 class="options__title">Annual Plan</h3>
+        <span class="options__price">$59.99/year</span>
+        <a class="options__link" href="#">Change</a>
+      </div>
+      <button class="card__btn card__btn--payment">Proceed to Payment</button>
+      <button class="card__btn card__btn--cancel">Cancel Order</button>
+    </article>
+  </main>
 </body>
 </html>

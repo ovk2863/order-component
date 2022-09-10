@@ -5,22 +5,29 @@
   --desaturated-blue: 224, 23%, 55%;
   --dark-blue: 223, 47%, 23%;
   --white: 0, 0%, 100%;
-
 }
 
 .page {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
   font-family: 'Red Hat Display', 'Arial', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.2;
   color: hsl(var(--dark-blue));
-  background-color: hsl(var(--very-pale-blue));
+  background-color: hsl(var(--pale-blue));
+  background-image: url(images/pattern-background-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100%;
+}
+
+.page__main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 707px;
 }
 
 .sr-only {
@@ -46,6 +53,7 @@ img {
   width: 325px;
   background-color: hsl(var(--white));
   border-radius: 20px;
+  box-shadow: 0 15px 30px hsl(var(--desaturated-blue), 0.5);
 }
 
 .card__img {
@@ -56,7 +64,7 @@ img {
 .card__wrapper {
   display: flex;
   flex-direction: column;
-  padding: 35px 24px;
+  padding: 35px 24px 24px 24px;
   text-align: center;
 }
 
@@ -73,11 +81,13 @@ img {
   padding: 0 10px;
   font-size: 15px;
   line-height: 1.6;
+  color: hsl(var(--desaturated-blue));
 }
 
 .card__options {
   display: grid;
-  grid-template-columns: 50px auto auto;
+  grid-template-columns: 45px auto auto;
+  column-gap: 12px;
   background-color: hsl(var(--very-pale-blue));
   background-image: url(images/icon-music.svg);
   background-repeat: no-repeat;
@@ -98,6 +108,7 @@ img {
 
 .options__price {
   grid-column: 2/3;
+  color: hsl(var(--desaturated-blue));
 }
 
 .options__link {
@@ -105,6 +116,16 @@ img {
   grid-row: 1/3;
   align-self: center;
   justify-self: end;
+  color: hsl(var(--bright-blue));
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.options__link:hover,
+.options__link:active,
+.options__link:focus {
+  text-decoration: none;
+  opacity: 0.7;
 }
 
 .card__btn--payment {
@@ -115,13 +136,82 @@ img {
   font-size: 16px;
   font-weight: 700;
   padding: 16px 8px;
-  margin-bottom: 25px;
+  margin-bottom: 23px;
+  box-shadow: 0 15px 30px hsl(var(--desaturated-blue), 0.5);
+}
+
+.card__btn--payment:hover,
+.card__btn--payment:focus {
+  cursor:pointer;
+  opacity: 0.7;
 }
 
 .card__btn--cancel {
+  padding: 5px;
   border: none;
   background-color: transparent;
   color: hsl(var(--desaturated-blue));
   font-size: 16px;
   font-weight: 700;
+}
+
+.card__btn--cancel:hover,
+.card__btn--cancel:focus {
+ color:hsl(var(--dark-blue));
+ cursor: pointer;
+}
+
+@media (min-width: 1439px) {
+  .page {
+    background-image: url(images/pattern-background-desktop.svg);
+  }
+
+  .page__main {
+    height: 902px;
+  }
+
+  .card__wrapper {
+    padding: 45px;
+  }
+
+  .card {
+    width: 450px;
+  }
+
+  .card__title {
+    font-size: 29px;
+  }
+
+  .card__description {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  .card__options {
+    background-position: 25px;
+    column-gap: 3px;
+    margin-bottom: 35px;
+    padding: 25px 15px;
+  }
+
+  .options__title {
+    font-size: 16px;
+  }
+
+  .options__price {
+    font-size: 16px;
+  }
+
+  .options__link {
+    padding-right: 10px;
+  }
+
+  .card__btn--payment {
+    margin-bottom: 28px;
+  }
+
+  .card__btn--cancel {
+    font-size: 15px;
+    font-weight: 700;
+  }
 }
